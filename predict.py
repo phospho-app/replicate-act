@@ -183,7 +183,17 @@ class Predictor(BasePredictor):
                         output_paths.append(item)
 
                 # Adding Readme
-                readme_content = """# ACT Model - phospho Replication Pipeline
+                readme_content = """
+---
+tags:
+- phosphobot
+- act
+- replicate
+task_categories:
+- robotics                                               
+---
+
+# ACT Model - phospho Replication Pipeline
 
 This model was trained using **phospho's Replicate pipeline** for **ACT models**, leveraging **LeRobot** for the training scripts.
 
