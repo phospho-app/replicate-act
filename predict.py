@@ -61,12 +61,15 @@ class Predictor(BasePredictor):
     def predict(
         self,
         dataset_repo_id: str = Input(
-            description="Hugging Face dataset ID to train on, LeRobot format > v2.0 expected"
+            description="Hugging Face dataset ID to train on, LeRobot format > v2.0 expected, i.e. 'LegrandFrederic/dual-setup'"
         ),
         hf_token: str = Input(
             description="Hugging Face API token (used to upload your trained model to your HF profile), find yours here: https://huggingface.co/settings/token"
         ),
-        hf_model_name: str = Input(description="Hugging Face model name"),
+        hf_model_name: str = Input(
+            description="Hugging Face model name, the name of the model to be created, i.e. 'trained-act-replicate'",
+            default="trained-act-replicate",
+        ),
         wandb_api_key: str = Input(
             description="Weights & Biases API key (optional, to track the online training), find yours here: https://wandb.ai/authorize",
             default="",
