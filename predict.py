@@ -64,11 +64,11 @@ class Predictor(BasePredictor):
             description="Hugging Face dataset ID to train on, LeRobot format > v2.0 expected"
         ),
         hf_token: str = Input(
-            description="Hugging Face API token (used to upload your trained model to your HF profile)"
+            description="Hugging Face API token (used to upload your trained model to your HF profile), find yours here: https://huggingface.co/settings/token"
         ),
         hf_model_name: str = Input(description="Hugging Face model name"),
         wandb_api_key: str = Input(
-            description="Weights & Biases API key (optional, to track the online training)",
+            description="Weights & Biases API key (optional, to track the online training), find yours here: https://wandb.ai/authorize",
             default="",
         ),
         wandb_project: str = Input(
@@ -127,6 +127,7 @@ class Predictor(BasePredictor):
             f"--dataset.repo_id={dataset_repo_id}",
             "--policy.type=act",
             f"--steps={steps}",
+            f"--wandb.project={wandb_project}",
             "--policy.device=cuda",
             f"--output_dir={output_dir}",
             f"--wandb.enable={str(wandb_enabled).lower()}",
@@ -203,7 +204,9 @@ task_categories:
 This model was trained using **phospho's Replicate pipeline** for **ACT models**, leveraging **LeRobot** for the training scripts.
 
 🔗 **Explore on Replicate**: [Replicate](https://replicate.com/phospho-app/act-policy)
+
 📖 **Get Started**: [docs.phospho.ai](https://docs.phospho.ai)
+
 🤖 **Get your robot**: [robots.phospho.ai](https://robots.phospho.ai)
 """
 
