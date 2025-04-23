@@ -6,7 +6,10 @@ build:
     - accelerate>=0.20.3
     - wandb>=0.19.8
   run:
+    - echo "v1"
     - git clone https://github.com/huggingface/lerobot.git /tmp/lerobot
     - pip install -e /tmp/lerobot
 
 predict: "predict.py:Predictor"
+
+image: "r8.im/phospho-app/act-policy"
