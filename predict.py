@@ -14,12 +14,6 @@ from cog import BasePredictor, Input, Path, Secret
 
 os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
 
-sentry_sdk.init(
-    dsn="https://39edfbd91b390b746a8e2205f0a69627@o4506399435325440.ingest.us.sentry.io/4509157921718272",
-    traces_sample_rate=1.0,
-    environment="production",
-)
-
 
 class HuggingFaceDatasetValidator:
     @staticmethod
